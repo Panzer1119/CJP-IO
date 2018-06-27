@@ -16,5 +16,15 @@
 
 package de.codemakers.io.streams;
 
-public class AdvancedStream {
+import java.io.Closeable;
+import java.io.IOException;
+
+public interface AdvancedStream<T> extends Closeable {
+    
+    T asBuffered();
+    T asInflated();
+    T asDeflated();
+    T asGZIP() throws IOException;
+    byte[] toByteArray() throws IOException;
+    
 }
