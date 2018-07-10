@@ -85,4 +85,12 @@ public interface IFile {
     
     boolean canExecute();
     
+    boolean copy(IFile destination);
+    
+    boolean copyToDir(IFile destination);
+    
+    boolean move(IFile destination);
+    
+    boolean moveToDir(IFile destination);
+    
 }

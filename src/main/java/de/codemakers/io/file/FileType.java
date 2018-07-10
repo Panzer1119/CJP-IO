@@ -17,7 +17,7 @@
 package de.codemakers.io.file;
 
 public enum FileType {
-    FILE_ABSOLUTE(true, true), FILE_RELATIVE(false, true), FILE_INTERN_ABSOLUTE(true, false), FILE_INTERN_RELATIVE(false, false), CUSTOM(true, true);
+    FILE_ABSOLUTE(true, true), FILE_RELATIVE(false, true), FILE_INTERN_ABSOLUTE(true, false), FILE_INTERN_RELATIVE(false, false), CUSTOM(true, true), UNKNOWN(false, false);
     
     private final boolean isAbsolute;
     private final boolean isExtern;
@@ -45,6 +45,10 @@ public enum FileType {
     
     public final boolean isCustom() {
         return this == CUSTOM;
+    }
+    
+    public final boolean isUnknown() {
+        return this == UNKNOWN;
     }
     
     public static final FileType getFileType(boolean isAbsolute, boolean isExtern) {
